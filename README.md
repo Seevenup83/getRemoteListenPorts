@@ -37,7 +37,8 @@ To get all the LISTEN ports based on [serverList](https://github.com/Seevenup83/
 ./getRemoteListenPorts
 ```
 
-to print the findings in a csv-list, you can add >> 
+to print the findings in a csv-list, you can add >> at the end
 ```
-./getRemoteListenPorts >> exportListenPorts.csv
+./getRemoteListenPorts >> example_exportListenPorts.csv
 ```
+and example can be seen here [example_exportListenPorts.csv](https://github.com/Seevenup83/getRemoteListenPorts/blob/master/example_exportListenPorts.csv)
