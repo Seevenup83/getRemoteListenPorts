@@ -1,0 +1,11 @@
+#!/bin/bash
+
+hostname=$(uname -n)
+osType=$(uname -o)
+
+# command to get all LISTEN ports on server
+listenPorts=$(netstat -tulpn 2>/dev/null | grep LISTEN | grep -v "::" | grep -v "127.0." | cut -d : -f2 | cut -d ' ' -f1)
+
+for port in $listenPorts; do
+  echo "$hostname;$osType;$port" # print out in csv format
+done

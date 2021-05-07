@@ -1,0 +1,10 @@
+#!/bin/bash
+
+serverList=$(cat ./serverList | cut -d ';' -f1) # be sure only servername comes out of csv-list
+remoteScript="./getListenPorts" # remoteScript used to get cleaner output from each server
+passwordFile="./password" # passwordFile to prevent user-input
+
+for server in $serverList; do
+  sshpass -f $passwordFile scp ./$remoteScript $server:/tmp/ # copy remoteScript to server
+  sshpass -f $passwordFile ssh $server "/tmp/$remoteScript && rm /tmp/$remoteScript" # run and remove remoteScript
+done
