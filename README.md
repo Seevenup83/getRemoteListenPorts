@@ -22,8 +22,9 @@ serverList=$(cat ./serverList | cut -d ';' -f5)
 ```
 
 ### password
-To prevent user input on scp and ssh user the file: [password](https://github.com/Seevenup83/getRemoteListenPorts/blob/master/password)
-to be sure no one else can read the password, change the permissions
+To prevent user input on scp and ssh use the file: [password](https://github.com/Seevenup83/getRemoteListenPorts/blob/master/password).
+
+Be sure no one else can read the password, change the permissions
 ```
 chmod 600 password
 ```
